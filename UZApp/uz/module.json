@@ -1,0 +1,12 @@
+[
+ {
+    "name":"moduleDemo",
+    "class":"UZModuleDemo",
+    "methods":["showAlert","createMeeting"]
+ },
+ {
+     "name":"moduleDemoSwift",
+     "class":"UZModuleDemoSwift",
+     "methods":["showAlert"]
+ }
+]

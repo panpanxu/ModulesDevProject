@@ -1,0 +1,6 @@
+framework module XiaoYuSDK {
+  umbrella header "XiaoYuSDK.h"
+
+  export *
+  module * { export * }
+}
