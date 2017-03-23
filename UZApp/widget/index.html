@@ -59,6 +59,7 @@
 	    <div id="main">
             <a class="button" tapmode="active" onclick="showAlert()">显示对话框</a>
             <a class="button" tapmode="active" onclick="createMeeting()">创建会议</a>
+            <a class="button" tapmode="active" onclick="callDevice()">呼叫设备</a>
         </div>
     </div>
 </body>
@@ -85,6 +86,11 @@ function createMeeting() {
                              msg: msg
                              });
                    });
+}
+
+function callDevice() {
+    var demo = api.require('moduleDemo');
+    demo.callDevice();
 }
 
 function apiready() {

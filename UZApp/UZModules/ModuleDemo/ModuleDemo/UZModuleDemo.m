@@ -69,6 +69,45 @@
     [XiaoYuSDK createMeeting:param];
 }
 
+- (void)callDevice:(NSDictionary *)paramDict {
+    
+    XYRunEnvironment env = (XYRunEnvironment)0;
+    BOOL isLoginMode = false;
+    
+    NSString *exitId = @"2175a8d4e385982d77d353e3ef2d69220d7acec6";
+    
+    [XiaoYuSDK initWithExtID:exitId
+                    delegate:self
+                   LoginMode:isLoginMode
+                  Enviroment:env
+               privateServer:@""];
+
+    
+    XYDeviceCallee *device = [[XYDeviceCallee alloc] init];
+    device.number = @"943514";
+    
+    XYUser *user = [[XYUser alloc] init];
+    //    user.displayName = @"sample user";
+    //    user.extUserId = @"sample123";
+//    if (_loginModeSwitch.isOn)
+//    {
+//        user.userId = 1814;
+//        user.securityKey = @"b6422b1eab6d1b2c2bd9d252e1e3749f1542d247a2b";
+//    }
+    
+    [XiaoYuSDK makeCallDevice:device byUser:user];
+    
+    
+    //#define delay_hangup  //打开注释时延时自动挂断
+    
+#ifdef delay_hangup
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(15 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        [XiaoYuSDK hangup];
+    });
+#endif
+
+}
+
 #pragma mark - XiaoYuSDKDelegate
 -(void)XYDidCreateMeetingWithResult:(XYErrorCode)result forParam:(XYMeetingParam *)param returnMeeting:(XYMeetingCallee *)meeting
 {

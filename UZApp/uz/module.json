@@ -2,7 +2,7 @@
  {
     "name":"moduleDemo",
     "class":"UZModuleDemo",
-    "methods":["showAlert","createMeeting"]
+    "methods":["showAlert","createMeeting","callDevice"]
  },
  {
      "name":"moduleDemoSwift",
